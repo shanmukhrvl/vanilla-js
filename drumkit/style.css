@@ -1,0 +1,39 @@
+html {
+    background: url(backdrum.png) no-repeat center center fixed;
+    background-size: cover;
+}
+body,html {
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+}
+.keys {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
+.key {
+    color: whitesmoke;
+    margin: 10px;
+    text-align: center;
+    border: 3px solid black;
+    border-radius: 0.5px;
+    padding: 15px 5px;
+    width: 10rem;
+    transition: all 0.07s ease;
+}
+.playing {
+    transform: scale(1.1);
+    border-color: yellowgreen;
+    box-shadow: 0 0 16px yellowgreen;
+}
+kbd {
+    font-size: 30px;
+    display: block;
+}
+.sound {
+    text-transform: uppercase;
+    color: yellowgreen;
+    letter-spacing: 0.1rem;
+}
