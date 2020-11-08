@@ -1,0 +1,94 @@
+html {
+    box-sizing: border-box;
+    font-size: 10px;
+}
+
+*, *::before, *::after {
+    box-sizing: inherit;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+    background-color: #CEECF5;
+    display: flex;
+    min-height: 100vh;
+    align-items: center;
+
+    background-image:
+    radial-gradient(circle at 100% 150%, #CEECF5 24%, #FFFFFF 25%, #FFFFFF 28%, #CEECF5 29%, #CEECF5 36%, #FFFFFF 36%, #FFFFFF 40%, transparent 40%, transparent),
+    radial-gradient(circle at 0    150%, #CEECF5 24%, #FFFFFF 25%, #FFFFFF 28%, #CEECF5 29%, #CEECF5 36%, #FFFFFF 36%, #FFFFFF 40%, transparent 40%, transparent),
+    radial-gradient(circle at 50%  100%, #FFFFFF 10%, #CEECF5 11%, #CEECF5 23%, #FFFFFF 24%, #FFFFFF 30%, #CEECF5 31%, #CEECF5 43%, #FFFFFF 44%, #FFFFFF 50%, #CEECF5 51%, #CEECF5 63%, #FFFFFF 64%, #FFFFFF 71%, transparent 71%, transparent),
+    radial-gradient(circle at 100% 50%, #FFFFFF 5%, #CEECF5 6%, #CEECF5 15%, #FFFFFF 16%, #FFFFFF 20%, #CEECF5 21%, #CEECF5 30%, #FFFFFF 31%, #FFFFFF 35%, #CEECF5 36%, #CEECF5 45%, #FFFFFF 46%, #FFFFFF 49%, transparent 50%, transparent),
+    radial-gradient(circle at 0    50%, #FFFFFF 5%, #CEECF5 6%, #CEECF5 15%, #FFFFFF 16%, #FFFFFF 20%, #CEECF5 21%, #CEECF5 30%, #FFFFFF 31%, #FFFFFF 35%, #CEECF5 36%, #CEECF5 45%, #FFFFFF 46%, #FFFFFF 49%, transparent 50%, transparent);
+    background-size:100px 50px;
+}
+
+.voiceinator {
+    padding: 2rem;
+    width: 50rem;
+    margin: 0 auto;
+    border-radius: 1rem;
+    position: relative;
+    background: white;
+    overflow: hidden;
+    z-index: 1;
+    box-shadow: 0 0 5px 5px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+    width: calc(100% + 4rem);
+    margin: -2rem 0 2rem -2rem;
+    padding: .5rem;
+    background: #E6F8E0;
+    border-bottom: 5px solid #ECF6CE;
+    text-align: center;
+    font-size: 5rem;
+    font-weight: 100;
+    font-family: 'pacifico', cursive;
+    text-shadow: 3px 3px 0 #ECF6CE;
+}
+
+.voiceinator input,
+.voiceinator button,
+.voiceinator select,
+.voiceinator textarea {
+    width: 100%;
+    display: block;
+    margin: 10px 0;
+    padding: 10px;
+    border: 0;
+    font-size: 2rem;
+    background: #F7F7F7;
+    outline: 0;
+}
+
+textarea {
+    height: 20rem;
+}
+
+#voices option {
+    font-size: 15px;
+}
+
+.voiceinator button {
+    background: #E6F8E0;
+    border: 0;
+    width: 49%;
+    float: left;
+    font-family: 'pacifico', cursive;
+    margin-bottom: 0;
+    font-size: 2rem;
+    border-bottom: 5px solid #ECF6CE;
+    cursor: pointer;
+    position: relative;
+}
+
+.voiceinator button:active {
+    top: 2px;
+}
+
+.voiceinator button:nth-of-type(1) {
+    margin-right: 2%;
+}
