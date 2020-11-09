@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Follow Along Nav</title>
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+
+        <nav class="top">
+            <div class="dropdownBackground">
+                <span class="arrow"></span>
+            </div>
+
+            <ul class="cool">
+                <li>
+                    <a href="#">About Me</a>
+                    <div class="dropdown dropdown1">
+                        <div class="bio">
+                            <p>Hi I am Shanmukh, a FrontEnd Developer. I am learning React, Node.js,and PostgreSQL</p>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <a href="#">Resources</a>
+                    <ul class="dropdown resources">
+                        <li>
+                            <a href="https://www.freecodecamp.org/learn/">freeCodeCamp</a>
+                        </li>
+                        <li>
+                            <a href="https://developer.mozilla.org/en-US/docs/Learn">MDN Web Docs</a>
+                        </li>
+                        <li>
+                            <a href="https://javascript30.com/">Javascript 30</a>
+                        </li>
+                        <li>
+                            <a href="https://reactjs.org/tutorial/tutorial.html">React</a>
+                        </li>
+                        <li>
+                            <a href="https://www.youtube.com/playlist?list=PL4cUxeGkcC9jsz4LDYc6kv3ymONOKxwBU">Node.js</a>
+                        </li>                        
+                    </ul>
+                </li>
+                <li>
+                    <a href="#">Other Links</a>
+                    <ul class="dropdown dropdown3">
+                        <li>
+                            <a class="button" href="https://twitter.com/shanmukhrvl">Twitter</a>
+                        </li>
+                        <li>
+                            <a class="button" href="https://github.com/shanmukhrvl/">Github</a>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        </nav>
+
+        <script>
+            const triggers = document.querySelectorAll('.cool > li');
+            const background = document.querySelector('.dropdownBackground');
+            const nav = document.querySelector('.top');
+
+            function handleEnter() {
+                this.classList.add('trigger-enter');
+                setTimeout(() => {
+                    if (this.classList.contains('trigger-enter')) {
+                        this.classList.add('trigger-enter-active');
+                    }                    
+                }, 150);
+                background.classList.add('open');
+
+                const dropdown = this.querySelector('.dropdown');
+                const dropdownCoords  = dropdown.getBoundingClientRect();
+                const navCoords = nav.getBoundingClientRect();
+
+                const coords = {
+                    height: dropdownCoords.height,
+                    width: dropdownCoords.width,
+                    top: dropdownCoords.top - navCoords.top,
+                    left: dropdownCoords.left - navCoords.left
+                };
+
+                background.style.setProperty('width', `${coords.width}px`);
+                background.style.setProperty('height', `${coords.height}px`);
+                background.style.setProperty('transform', `translate(${coords.left}px, ${coords.top}px)`);
+            }
+
+            function handleLeave() {
+                this.classList.remove('trigger-enter', 'trigger-enter-active');
+                background.classList.remove('open');
+            }
+
+            triggers.forEach(trigger => trigger.addEventListener('mouseenter', handleEnter));
+            triggers.forEach(trigger => trigger.addEventListener('mouseleave', handleLeave));
+        </script>
+    </body>
+
+</html>
